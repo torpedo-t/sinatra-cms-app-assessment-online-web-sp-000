@@ -1,0 +1,11 @@
+<% if current_user(session) %>
+    <h3><%= @video.name %></h3>
+    <h3><%= @video.category %></h3>
+
+    <a class="button" href="/videos/<%= @video.id %>/edit">Edit Video</a><br><br>
+    <form action="/videos/<%= @video.id %>/delete" method="POST">
+    <input type="submit" name="submit" value="Delete video">
+<% else %>
+    <a class="button" href="/login">You must be logged in to delete a video.</a>
+<% end %>
+    </form>

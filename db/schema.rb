@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 7) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
+    t.string "email"
   end
 
   create_table "videos", force: :cascade do |t|
     t.string "name"
-    t.integer "length_of_time"
+    t.integer "user_id"
+    t.string "category"
   end
 
 end

@@ -1,0 +1,11 @@
+<h1>Welcome, <%= @user.username %></h1>
+
+<% @users.each do |user| %>
+    <% user.videos.each do |video| %>
+        <p><%= user.username %> video</p>
+        <p><%= video.id %>. <%= video.name %></p><a class="button" href="/videos/<%= video.id %>/edit">Edit Video</a><br><br>
+    <% end %>
+<% end %>
+<br>
+<a href="/videos/new">Share a video</a>
+<a href="/logout">Log Out</a>
