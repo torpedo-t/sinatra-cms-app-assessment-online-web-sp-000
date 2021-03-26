@@ -4,8 +4,9 @@
 
     <a class="button" href="/videos/<%= @video.id %>/edit">Edit Video</a><br><br>
     <form action="/videos/<%= @video.id %>/delete" method="POST">
-    <input type="submit" name="submit" value="Delete video">
+    <input type="submit" name="submit" value="Delete video"><br><br>
 <% else %>
     <a class="button" href="/login">You must be logged in to delete a video.</a>
 <% end %>
     </form>
+<a class="button" href="/logout">Log Out</a>

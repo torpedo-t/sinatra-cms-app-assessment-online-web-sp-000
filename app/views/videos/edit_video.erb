@@ -1,3 +1,4 @@
+<h4>Fill out both fields below to update video.</h4>
 <% if current_user(session) %>
     <form method="post" action="/videos/<%= @video.id %>">
         <input type="hidden" name="_method" id="hidden" value="PATCH">

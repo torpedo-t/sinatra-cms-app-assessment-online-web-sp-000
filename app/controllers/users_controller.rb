@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
+        #binding.pry
         if params["email"] == "" || params["username"] == "" || params["password"] == ""
             redirect to "/signup"
         else
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
 
     post '/login' do
         user = User.find_by(:username => params[:username])
-        if user and user.authenticate(params[:password])
+        if user && user.authenticate(params[:password])
             session[:user_id] = user.id
             redirect to "/videos"
         else
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
 
     get '/logout' do
         if logged_in?(session)
-            session.clear
+            logout!
             redirect to "/login"
         else
             redirect to "/"
