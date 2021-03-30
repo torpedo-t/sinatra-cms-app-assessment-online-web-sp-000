@@ -1,3 +1,10 @@
+# Instructions
+- fork repository
+- run bundle install
+- run shotgun
+- visit URL
+- Sign up/ Log in
+
 # Sinatra Content Management System App
 
 ## Overview
